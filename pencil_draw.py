@@ -82,7 +82,7 @@ def get_stroke(img, ks,  dirNum):
     return S
 
 
-
+#for histogram matching
 def natural_histogram_matching(img):
     ho = np.zeros( 256)
     po = np.zeros( 256)
@@ -119,8 +119,9 @@ def natural_histogram_matching(img):
     Iadjusted = np.float64(Iadjusted) / 255.0
     return Iadjusted
 
-def get_toneMap(img, P):
 
+#compute the tone map
+def get_toneMap(img, P):
     P = np.float64(P) / 255.0
     J = natural_histogram_matching(img)
     J = cv2.blur(J, (10, 10))
